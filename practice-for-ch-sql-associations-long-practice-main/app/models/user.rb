@@ -16,15 +16,22 @@ class User < ApplicationRecord
 
     belongs_to(
         :enrollment,
-        class_name: Enrollment,
+        class_name: 'Enrollment',
         primary_key: :id,
         foreign_key: :name
     )
 
     has_many(
         :course,
-        class_name: Course,
+        class_name: 'Course',
         primary_key: :id,
         foreign_key: :course_id
+    )
+
+    belongs_to(
+        :course,
+        class_name: 'Course',
+        primary_key: :id,
+        foreign_key: :name
     )
 end
